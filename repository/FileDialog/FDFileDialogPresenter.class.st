@@ -47,6 +47,7 @@ Class {
 	#instVars : [
 		'nameText',
 		'filesList',
+		'klm',
 		'currentDirectory',
 		'nameLabel',
 		'showHiddenFiles',
