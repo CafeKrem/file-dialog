@@ -324,11 +324,6 @@ FDFileDialogPresenter >> iconFor: anEntry [
 		ifAbsent: [ self iconNamed: #page ]
 ]
 
-{ #category : #'initialize-value' }
-FDFileDialogPresenter >> initialTitle [
-	^ self subclassResponsibility
-]
-
 { #category : #initialization }
 FDFileDialogPresenter >> initialize [
 	super initialize.
@@ -356,7 +351,6 @@ FDFileDialogPresenter >> initializeBookmarksTreeTable [
 FDFileDialogPresenter >> initializeDialogWindow: aDialogWindowPresenter [
 	super initializeDialogWindow: aDialogWindowPresenter.
 	aDialogWindowPresenter
-		title: self initialTitle;
 		initialExtent: 900 @ 900;
 		okAction: [ self confirm ];
 		cancelAction: [ self delete ]

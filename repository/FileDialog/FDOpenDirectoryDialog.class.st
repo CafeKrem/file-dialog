@@ -30,15 +30,16 @@ FDOpenDirectoryDialog class >> example [
 		openDialogWithSpec inspect
 ]
 
-{ #category : #api }
-FDOpenDirectoryDialog >> initialTitle [
-	^ 'Select Directory To Open'
-]
-
 { #category : #initialization }
 FDOpenDirectoryDialog >> initializeWidgets [
 	super initializeWidgets.
 	fileNavigationSystem nameText disable
+]
+
+{ #category : #initialization }
+FDOpenDirectoryDialog >> initializeWindow: aWindowPresenter [
+	super initializeWindow: aWindowPresenter.
+	aWindowPresenter title: 'Select Directory To Open'
 ]
 
 { #category : #actions }

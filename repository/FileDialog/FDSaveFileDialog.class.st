@@ -48,11 +48,6 @@ FDSaveFileDialog >> extension: anExtensionMatcher [
 	extensionMather := anExtensionMatcher
 ]
 
-{ #category : #api }
-FDSaveFileDialog >> initialTitle [
-	^ 'Save As'
-]
-
 { #category : #initialization }
 FDSaveFileDialog >> initialize [
 	super initialize.
@@ -67,6 +62,12 @@ FDSaveFileDialog >> initializePresenter [
 		dataSourceBlock: [ :text | fileNavigationSystem currentDirectory children collect: #basename ];
 		filterBlock: [ :opt :text |opt beginsWith: text ].
 	fileNavigationSystem nameText entryCompletion: ec
+]
+
+{ #category : #initialization }
+FDSaveFileDialog >> initializeWindow: aWindowPresenter [
+	super initializeWindow: aWindowPresenter.
+	aWindowPresenter title: 'Save As'
 ]
 
 { #category : #accessing }
